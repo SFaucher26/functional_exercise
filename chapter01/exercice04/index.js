@@ -23,7 +23,12 @@ export async function asyncAdd(a, b) {
 }
 
 export async function filterArrayAsync(array, filterFunc) {
-  setTimeout(() => {
-
-  }, 1000);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+    
+      let result = array.filter(filterFunc);
+      resolve(result);
+    }, 1000);
+  });
 }
+
